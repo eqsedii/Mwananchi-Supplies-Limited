@@ -2,7 +2,9 @@ const WA='254101200510',$=s=>document.querySelector(s),$$=s=>[...document.queryS
 const wa=t=>'https://wa.me/'+WA+'?text='+encodeURIComponent(t);
 // loader video on button taps
 const ld=$('#ld'),lv=ld.querySelector('video');
-function load(go,ms=1500){ld.classList.add('on');lv.currentTime=0;lv.play().catch(()=>{});setTimeout(()=>{go();setTimeout(()=>{ld.classList.remove('on');lv.pause()},900)},ms)}
+function load(go){ld.classList.add('on');lv.currentTime=0;let d=0;
+ const fin=()=>{if(d)return;d=1;lv.onended=null;go();setTimeout(()=>{ld.classList.remove('on');lv.pause()},900)};
+ lv.onended=fin;lv.play().catch(()=>{});setTimeout(fin,((lv.duration||4)+.6)*1000)}
 window.load=load;
 document.addEventListener('click',e=>{const a=e.target.closest('a.btn,nav a,.card,button.btn[data-load]');if(!a||a.dataset.nl)return;
  const h=a.getAttribute('href');if(h&&(h[0]==='#'||a.target==='_blank'&&0))return;
