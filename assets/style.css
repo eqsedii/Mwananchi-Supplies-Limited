@@ -79,3 +79,6 @@ footer .grid{grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}footer a{d
 @media(max-width:860px){.hero .wrap,.split{grid-template-columns:1fr}.hero .wrap{min-height:0}.two{grid-template-columns:1fr}
 #mb{display:block}nav{position:absolute;top:100%;left:0;right:0;background:#fff;flex-direction:column;align-items:stretch;padding:12px 20px;box-shadow:0 14px 24px rgba(0,0,0,.12);display:none}nav.open{display:flex}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+.fbk{display:inline-flex!important;align-items:center;gap:10px;font-weight:600;margin-top:8px;transition:.25s}
+.fbk span{width:38px;height:38px;border-radius:50%;background:#fff;display:grid;place-items:center;overflow:hidden;transition:.3s}.fbk svg{width:38px}
+.fbk:hover span{transform:scale(1.12) rotate(-8deg)}main .fbk{color:var(--navy)}
