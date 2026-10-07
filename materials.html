@@ -32,7 +32,7 @@ mab("Zee Tile Mabati","mabati-stone",490,520),
 ["Roofing","Stone-Coated Roofing Sheets","mabati-stone",[["Colour",["Charcoal","Red","Green","Brown"]]]],
 ["Roofing","Ridge Caps & Roofing Accessories","mabati-box",[["Type",["Ridge cap","Valley","Flashing","Roofing nails","Gutters"]]]],
 ["Water Tanks","Water Tank","tanks",[],{l:"Capacity",v:[["1,000L",4500],["2,000L",10500],["3,000L",14500],["4,000L",18500],["5,000L",24500],["6,000L",27500],["8,000L",32500],["10,000L",45500],["16,000L",98500],["20,000L",147500],["24,000L",192500]]}],
-["Cement","Cement (50kg bag)","cement",[["Brand",["Dangote","Kenya Orient","Twiga","Tanga","Safari","Pioneer","Lafarge","Cimaf","Sol","Composite"]]]],
+["Cement","Cement (50kg bag)","cement",[]],
 stl("Steel Bars (D)","rebar",[["D8",450],["D10",600],["D12",900],["D16",1050],["D20",2500],["D25",4800],["D32",8500]]),
 stl("Round Bars (R)","rebar",[["R6",150],["R8",550],["R10",750],["R12",900],["R16",1450]]),
 stl("Y Bars","rebar",[["Y8",430],["Y10",650],["Y12",800],["Y16",1020],["Y20",2300],["Y25",3600],["Y32",4500]]),
@@ -59,7 +59,7 @@ til("Wood Look Tiles",[["15 x 60 (Floor)",1100,"1.08"],["20 x 120 (Floor)",1800,
 til("Other Tiles",[["Anti-Slip 30 x 30",1500,"1.44"],["Decorative 30 x 30",1400,"1.44"],["Outdoor/Parking 40 x 40",1800,"1.44"],["Granite Look 60 x 60",2800,"1.44"]])];
 const K=n=>'KSh '+n.toLocaleString('en-KE');
 const L=$('#list'),cats=[...new Set(IT.map(i=>i[0]))];let cur=new URLSearchParams(location.search).get('cat')||'All';
-function ptag(p){if(!p)return'<small class="pl ask">Ask for price</small>';const a=p.v.map(x=>x[1]),lo=Math.min(...a);
+function ptag(p){if(!p)return'';const a=p.v.map(x=>x[1]),lo=Math.min(...a);
  return'<small class="pl"><b>'+(a.length>1?'From ':'')+K(lo)+'</b>'+(p.u?' '+p.u:'')+(p.w?' <em>Wholesale</em>':'')+'</small>'}
 $('#chips').innerHTML=['All',...cats].map(c=>`<button class="chip" data-c="${c}">${c}</button>`).join('');
 function draw(){const q=$('#q').value.toLowerCase();$$('.chip').forEach(c=>c.classList.toggle('on',c.dataset.c===cur));
